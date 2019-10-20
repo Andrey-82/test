@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import 'materialize-css/dist/css/materialize.css';
+import App from'./components/app.js';
 
 ReactDom.render(
-  <div>123456789</div>,
+        <App />,
 document.getElementById('sbertest')
 );

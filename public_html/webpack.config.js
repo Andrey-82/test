@@ -13,7 +13,8 @@ module.exports = {
     publicPath: 'dist/'
   },
   devServer:{
-    overlay: true  
+    overlay: true,
+    port: 3000
   },
   module: {
     rules: [
