@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import TitleBlock from './title_block.js';
 
-const Filters = ({users}) => {
+const Filters = ({users, selectUser, textFilter}) => {
     let options = users.map((user, id) => <option value={id} key={id}>{user.name}</option>);        
     return (
     <div className="row">
@@ -11,8 +11,8 @@ const Filters = ({users}) => {
     <div className="col s12 m6">
             <div className="row">
                 <div className="input-field col s12">
-                    <select style={{display: 'block'}}>
-                        <option value="" disabled selected>Выберите пользователя</option>
+                    <select style={{display: 'block'}} onChange={selectUser()}>
+                        <option defaultValue="all" value="all">Выберите пользователя</option>
                         {options}
                     </select>
                 </div>
@@ -21,7 +21,12 @@ const Filters = ({users}) => {
         
         <div className="col s12 m6">
             <div className="input-field col s12">
-                <input placeholder="Поиск по тексту" type="text" className="validate" />
+                <input 
+                    className="validate"
+                    placeholder="Поиск по тексту" 
+                    type="text"
+                    onChange={textFilter()}
+                />
             </div>
         </div>
     </div>
